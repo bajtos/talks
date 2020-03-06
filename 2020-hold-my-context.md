@@ -57,7 +57,3 @@ _Structure, table of contents and main content points._
    headers to the outgoing request headers when calling a web service.
 
 10. Conclusion. Availability of `AsyncLocalStorage` API, known limitations, etc.
-
-Please note that `AsyncLocalStorage` has not yet landed at the time of writing
-this proposal. The last three points of my talk may may slightly change to
-accommodate for the actual API the Node.js core team has settled on.
