@@ -12,9 +12,10 @@ C and Java can utilize thread-local storage, which does not work for Node's
 single-threaded event loop.
 
 The talk will describe different solutions people have been using (and
-abandoning) over the past 6+ years, dive into history of domains and async
-hooks, explain what's so difficult about context keeping, and finally offer the
-bright future that's coming with the recently introduced `AsyncLocalStorage` API.
+abandoning) over the past 6+ years, dive into the history of domains and async
+hooks, explain what's so difficult about context keeping. Finally, I'll discuss
+the `AsyncLocalStorage` API introduced by Node.js 14 and show how to use it in 
+practice.
 
 ## Talk description and abstract
 
@@ -22,7 +23,7 @@ _Structure, table of contents and main content points._
 
 1. Why would anyone need to preserve a context? Start with an example explaining
   the problem faced by server developers: how to forward correlation-id from
-  an incoming request to a backend web service. Show how easy this is in sync
+  an incoming request to a backend web service. Show how easy this is in the sync
   world (C/Java/.NET).
 
 2. Solution 1: core `domains`. While they can track async transitions and
@@ -34,7 +35,7 @@ _Structure, table of contents and main content points._
 
 4. Explain why it is difficult to preserve the context (user-land promises,
    connection pool problem). Talk about our own experience with issues caused
-   by MongoDB driver. Mention other use cases affected by this problem
+   by the MongoDB driver. Mention other use cases affected by this problem
    (APM tools like NewRelic).
 
 5. Solution 3: explicit context passing in function arguments. Very reliable
